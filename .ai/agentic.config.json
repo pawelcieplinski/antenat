@@ -1,5 +1,9 @@
 {
   "version": 1,
+  "discovery": {
+    "enabled": true,
+    "roles": { "domainExpert": false, "designer": false }
+  },
   "baseBranch": "auto",
   "tracker": "github",
   "browser": { "provider": "agent-browser" },
