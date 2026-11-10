@@ -1,0 +1,4 @@
+# Per-run QA state (om-prepare-test-env, om-auto-qa-pr)
+.ai/qa/artifacts_*/
+.ai/qa/test-env.json
+.ai/qa/test-env.env

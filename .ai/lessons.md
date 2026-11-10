@@ -7,3 +7,4 @@ Index of findings, conclusions and improvements recorded by agents. One line per
 ```
 
 <!-- Append lessons below this line. -->
+- [Keep om-* execution plans out of `.ai/runs`](lessons/2026-11-09-om-plans-dir.md) — `paths.runs` points to `.ai/plans` so om-* plans and rotation never touch the AGENTS.md run logs in `.ai/runs/`.
