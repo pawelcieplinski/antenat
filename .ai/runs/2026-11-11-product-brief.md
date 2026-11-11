@@ -4,6 +4,7 @@ Goals:
 - Establish the product context for Antenat with `om-discover` (mode `own`)
 - Decide the smallest first-version scope and record it with its evidence, decisions and open questions
 - Refresh the brief with the founder's GEDCOM export check (A02)
+- Record the founder's answers to the open questions (platform, statistics, AI cost, data protection)
 
 Spec: none
 Branch: docs/product-brief
@@ -20,3 +21,8 @@ Next: the founder runs the collection plan, starting with the GEDCOM export chec
 Scope: `om-discover` refresh after the founder's MyHeritage GEDCOM export check: aggregate data note `research/data/2026-11-11-gedcom-export-check.md`, new decision D06 (journey view moves later, supersedes D04), A02 refuted, new A05 (place-name matching), D02 reviewed and unchanged, Q05 closed, GEDCOM entry removed from the collection plan.
 Decisions/gotchas: the repository is public, so the data note keeps only counts: no names, place names or addresses, and the `.ged` file stays outside the repository (it holds living people's e-mail and postal addresses). Places in the export are bare locality names without coordinates, which is why the journey view needs a confirmation step. A skeptic pass caught that "linked to their parents" overstated the data (15 of 32 have their own parents recorded; all 32 are reachable); corrected.
 Next: the founder checks MyHeritage's ancestor views (A04) and interviews other family researchers (A01).
+
+## 2026-11-12
+Scope: record the founder's answers to Q01–Q04: D07 (web application), D08 (AI assistant free for the founder), R01 (data stored with consent and in line with GDPR and Polish and EU law), D09 (outcome check: the founder imports their export and browses all 32 direct ancestors), D10 (how R01 applies to living relatives who do not use Antenat, now Q07, blocks release, not planning). Q01, Q03 closed; Q04 closed in part; Q02 narrowed.
+Decisions/gotchas: R01's wording was the agent's reading and was put back to the founder before being recorded as confirmed. A skeptic pass stopped the brief from claiming implementation readiness for the whole first version: the import and the direct-ancestors view are ready for planning on the founder's supported need, while the other-user part of D05 still waits on A01, because accepting a risk is not evidence.
+Next: the founder checks MyHeritage's ancestor views (A04), then interviews other family researchers (A01); implementation planning of the import and the direct-ancestors view can follow.

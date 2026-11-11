@@ -3,10 +3,10 @@
 - Date: 2026-11-12 (first written 2026-11-11)
 - Mode: own; Owner: Paweł Ciepliński (founder, product owner); Pass: full
 - Evidence basis: one first-person account from the founder (written chat answers, 2026-11-11), a check of the founder's own GEDCOM export (2026-11-11) and the founder's confirmed decisions; no checked benchmarks or accounts from other people. Most consequential untested beliefs: A01, A04.
-- Coverage: 27 claims — 22 sourced (interview 8, data 4, document 10, product 0, benchmark 0), 0 synthetic, 5 assumed; 2 entries on the collection plan
+- Coverage: 33 claims — 28 sourced (interview 8, data 4, document 16, product 0, benchmark 0), 0 synthetic, 5 assumed; 2 entries on the collection plan
 - Synthetic hypotheses outside Coverage: 0
-- Definition of Ready signed by: scope confirmed by Paweł Ciepliński on 2026-11-11 (D05) and 2026-11-12 (D06); not signed for implementation, see the [addendum](#definition-of-ready-addendum-own); ready for: research (A01, A04)
-- Sources: `.ai/specs/research/interviews/2026-11-11-founder.md`, `.ai/specs/research/decisions/D01-audience.md`, `.ai/specs/research/decisions/D02-gedcom-import.md`, `.ai/specs/research/decisions/D03-family-statistics.md`, `.ai/specs/research/decisions/D04-first-version-scope.md`, `.ai/specs/research/decisions/D05-other-users-from-start.md`, `.ai/specs/research/decisions/N01-N02-non-goals.md`, `.ai/specs/research/decisions/D06-journey-view-later.md`, `.ai/specs/research/data/2026-11-11-gedcom-export-check.md`
+- Definition of Ready signed by: Paweł Ciepliński on 2026-11-12 for the GEDCOM import and the direct-ancestors view (D06, D09); not signed for the other-user part of the first version (D05), which waits on A01, see the [addendum](#definition-of-ready-addendum-own); ready for: research (A01, A04) and implementation planning of the import and the direct-ancestors view
+- Sources: `.ai/specs/research/interviews/2026-11-11-founder.md`, `.ai/specs/research/decisions/D01-audience.md`, `.ai/specs/research/decisions/D02-gedcom-import.md`, `.ai/specs/research/decisions/D03-family-statistics.md`, `.ai/specs/research/decisions/D04-first-version-scope.md`, `.ai/specs/research/decisions/D05-other-users-from-start.md`, `.ai/specs/research/decisions/N01-N02-non-goals.md`, `.ai/specs/research/decisions/D06-journey-view-later.md`, `.ai/specs/research/data/2026-11-11-gedcom-export-check.md`, `.ai/specs/research/decisions/D07-web-app.md`, `.ai/specs/research/decisions/D08-ai-no-cost-for-founder.md`, `.ai/specs/research/decisions/R01-consent-and-data-protection.md`, `.ai/specs/research/decisions/D09-first-version-outcome-check.md`, `.ai/specs/research/decisions/D10-living-relatives-blocks-release.md`
 
 ## Decision summary
 
@@ -16,9 +16,9 @@ The founder researches their own family history, keeps the tree in MyHeritage, a
 
 First version, for the founder and other people researching their families: user accounts, import of a GEDCOM file (D02) and a view of direct ancestors only. The founder's own export supports that view: all 32 recorded direct ancestors are reachable through parent links. The journey view moved later (D06): 11 of 32 ancestors have places, and the places are bare names without coordinates, so it needs a step to confirm each locality. Statistics (D03), documents and photos, the heatmap and the AI assistant also come later. See [Scope](#scope) and [Key flows](#key-flows).
 
-What could change this: other people's needs are untested (A01), and nobody has checked whether MyHeritage already has an ancestors-only view (A04). Serving other users from the start makes the handling of living relatives' data (Q04) a blocker, alongside the platform choice (Q01).
+What could change this: other people's needs are untested (A01), and nobody has checked whether MyHeritage already has an ancestors-only view (A04). Serving other users from the start brings a data-protection rule (R01); how it applies to living relatives who appear in an uploaded tree but do not use Antenat is open (Q07) and blocks release to other users. Antenat is a web application (D07).
 
-Next action: the founder runs the two checks in the [Collection plan](#collection-plan). Dates open.
+Next action: the founder checks MyHeritage's ancestor views (A04) first, since a positive result would remove the first version's main reason, then interviews other family researchers (A01); see the [Collection plan](#collection-plan). Implementation planning of the import and the direct-ancestors view can follow. Dates open.
 
 ## Vision
 
@@ -53,13 +53,14 @@ No reference product was checked; MyHeritage is described only from the founder'
 
 - Business goal: not set; the founder has not stated one beyond serving their own family and others (D01).
 - User outcome: the founder, using their own imported tree, sees their direct line without siblings; following where the family lived over time comes later (D06). Derived from the founder's stated needs; no outcome for other users is stated (A01). `[INTERVIEW]` interviews/2026-11-11-founder.md
+- How the outcome is checked: the founder imports their own MyHeritage export and browses all 32 recorded direct ancestors without their siblings; agent proposal, accepted by the founder. `[DOCUMENT]` decisions/D09-first-version-outcome-check.md
 - Primary metric, baseline today, threshold, date: not set; no metric was discussed, and what other users need is unresearched (A01).
 - What must not get worse: none identified.
 
 ## Scope
 
 - **Now (D05, D06):** for the founder and other people researching their families — user accounts (D05); import a GEDCOM file (D02); a view of direct ancestors only, without their siblings.
-- **Later:** the journey view, with a step to confirm each locality on a map (D06, A05); family statistics (D03); documents and photos; the heatmap of ancestors' places; the AI assistant that reads records and answers questions (Q03).
+- **Later:** the journey view, with a step to confirm each locality on a map (D06, A05); family statistics (D03, Q02); documents and photos; the heatmap of ancestors' places; the AI assistant that reads records and answers questions, at no running cost to the founder (D08).
 - **Not doing:** see Non-goals
 
 ## Domain glossary
@@ -77,14 +78,15 @@ No reference product was checked; MyHeritage is described only from the founder'
 - In the founder's export, all 32 recorded direct ancestors, across 7 generations, are reachable from the founder through parent links; the line ends where the tree ends (15 have their own parents recorded). `[DATA]` data/2026-11-11-gedcom-export-check.md
 - In the founder's export, 18 of 32 direct ancestors have any date and 11 have any place; the parents have no place. `[DATA]` data/2026-11-11-gedcom-export-check.md
 - In the founder's export, all 13 distinct places are bare locality names without municipality, region or country, and none has coordinates. `[DATA]` data/2026-11-11-gedcom-export-check.md
-- The founder's export carries e-mail and postal addresses of living people (Q04). `[DATA]` data/2026-11-11-gedcom-export-check.md
+- The founder's export carries e-mail and postal addresses of living people (R01, Q07). `[DATA]` data/2026-11-11-gedcom-export-check.md
 
 ## Business rules
 
 | Id | Rule | Applies to | Source | Status | Review by | Required path to change | Owner | Supersedes |
 |---|---|---|---|---|---|---|---|---|
+| R01 | Users' family-tree data is stored only with consent and in line with GDPR and Polish and EU law | family-tree data users upload, from the first version (D05) | `[DOCUMENT]` decisions/R01-consent-and-data-protection.md | active | unknown | founder approves a superseding row | Paweł Ciepliński | none |
 
-None agreed yet; rules for users' data wait on Q04.
+R01's wording was proposed by the agent and confirmed by the founder; how it applies to living relatives who do not use Antenat is Q07.
 
 ## Non-goals
 
@@ -103,6 +105,10 @@ None agreed yet; rules for users' data wait on Q04.
 | D04 | 2026-11-11 | First version: GEDCOM import, direct-ancestors view, journey view; statistics, documents, photos, heatmap and AI assistant later | Agent recommendation, confirmed by the founder: the direct-ancestors view answers the problem the founder described; the journey view answers the founder's stated question; the founder listed the map and the timeline separately, the agent merged them; statistics have no described situation yet; alternatives offered: smaller, import and the direct-ancestors view only; larger, statistics now (D03) | Paweł Ciepliński | superseded | — | founder approves a superseding row | `[DOCUMENT]` decisions/D04-first-version-scope.md | none |
 | D05 | 2026-11-11 | The first version serves other people researching their families from the start, with user accounts | Founder's choice, no reason given; alternative declined: the agent's recommendation to serve the founder alone first, because other users' needs are untested (A01) and their data raises Q04 | Paweł Ciepliński | active | when A01 has a result | founder approves a superseding row | `[DOCUMENT]` decisions/D05-other-users-from-start.md | none |
 | D06 | 2026-11-12 | First version: user accounts, GEDCOM import, direct-ancestors view; the journey view, with a step to confirm each locality, moves later | Agent recommendation, confirmed by the founder: the export check showed few places and bare names without coordinates (A02), so the journey view needs extra work, and the goal was the smallest first version; alternative: keep the journey view and add the confirmation step now; accepted cost: the founder's where-from question is answered later | Paweł Ciepliński | active | when A01 has a result | founder approves a superseding row | `[DOCUMENT]` decisions/D06-journey-view-later.md | D04 |
+| D07 | 2026-11-12 | Antenat is a web application | Founder's answer to Q01; alternatives in the question: mobile, desktop; no reason given | Paweł Ciepliński | active | unknown | founder approves a superseding row | `[DOCUMENT]` decisions/D07-web-app.md | none |
+| D08 | 2026-11-12 | The AI assistant must not create running costs for the founder | Founder's answer to Q03 ("Free for founder"); whether it is also free for users was not stated; no reason given | Paweł Ciepliński | active | unknown | founder approves a superseding row | `[DOCUMENT]` decisions/D08-ai-no-cost-for-founder.md | none |
+| D09 | 2026-11-12 | The first version's outcome is checked by the founder importing their own MyHeritage export and browsing all 32 recorded direct ancestors without their siblings | Agent proposal, accepted by the founder; alternative: a check the founder describes | Paweł Ciepliński | active | unknown | founder approves a superseding row | `[DOCUMENT]` decisions/D09-first-version-outcome-check.md | none |
+| D10 | 2026-11-12 | How R01 applies to living relatives who do not use Antenat (Q07) blocks release to other users, not implementation planning; the design must cover it | Founder's choice; alternative: also block planning; no further reason given | Paweł Ciepliński | active | unknown | founder approves a superseding row | `[DOCUMENT]` decisions/D10-living-relatives-blocks-release.md | none |
 
 ## Riskiest assumptions
 
@@ -128,16 +134,17 @@ None. No simulated walkthroughs were run.
 
 | Id | Question | Blocking | Who can answer | Status |
 |---|---|---|---|---|
-| Q01 | Will Antenat be a web, mobile or desktop app? | yes — implementation planning of the first version | founder | open |
-| Q02 | Which family statistics, as in MyHeritage, does the founder use and want? | no — blocks only planning the statistics (D03) | founder | open |
-| Q03 | Does "free" AI mean free for users, no running cost for the founder, or both? | no — blocks only planning the AI assistant | founder | open |
-| Q04 | How are living relatives' personal data handled when other people upload their trees? | yes — blocks implementation planning and release of the first version, which serves other users (D05) | founder, with legal advice if needed | open |
+| Q01 | Will Antenat be a web, mobile or desktop app? | yes — implementation planning of the first version | founder | closed 2026-11-12: web (D07) |
+| Q02 | Which family statistics, as in MyHeritage, does the founder use and want? | no — blocks only planning the statistics (D03) | founder | open; 2026-11-12: the founder wants those that give the most interesting information, which ones is still to decide |
+| Q03 | Does "free" AI mean free for users, no running cost for the founder, or both? | no — blocks only planning the AI assistant | founder | closed 2026-11-12: free for the founder (D08) |
+| Q04 | How are living relatives' personal data handled when other people upload their trees? | yes — blocked implementation planning and release of the first version (D05) | founder, with legal advice if needed | closed 2026-11-12 in part: principle answered (R01); how living relatives' data is handled moved to Q07 (D10) |
 | Q05 | Should the result of interviews with other researchers (A01) also trigger a review of the first-version scope (D06)? | no | founder | closed 2026-11-12: yes, the founder reviews D06 when A01 has a result |
-| Q06 | If handling living relatives' data (Q04) needs more than fits the first version, what happens to accounts for other people (D05)? | no — becomes relevant once Q04 is answered | founder | open |
+| Q06 | If meeting R01 for living relatives (Q07) needs more than fits the first version, what happens to accounts for other people (D05)? | no — becomes relevant once Q07 is answered | founder | open |
+| Q07 | How does R01 apply to living relatives who appear in an uploaded tree but do not use Antenat, and how are their data handled until then? | yes — blocks release of the first version to other users (D05, R01); not implementation planning, the design must cover it (D10) | founder, with legal advice if needed | open |
 
 ## Definition of Ready addendum (own)
 
-Problems and Target group are supported for the founder only, by one first-person account; other users are a decision (D01, D05) without research behind it (A01), and accepting that risk does not make it evidence. The scope is confirmed (D05, D06); the export check refuted A02's places part, and the direct-ancestors view rests on parent links the check confirmed. Ready for research (A01, A04). Implementation planning waits on Q01 and Q04, and the first version's value to other users remains unsupported until A01 has a result.
+Problems and Target group are supported for the founder only, by one first-person account; other users are a decision (D01, D05) without research behind it (A01), and accepting that risk does not make it evidence. The scope is confirmed (D05, D06), the platform is web (D07), data protection follows R01 and the outcome check is agreed (D09). The import and the direct-ancestors view address the founder's supported problem, and the export check confirmed the parent links they need, so they are ready for implementation planning; A04 should be checked first. The other-user part of the first version (D05) has no supported problem yet and waits on A01. Release to other users also waits on Q07 (D10).
 
 ## Collection plan
 
