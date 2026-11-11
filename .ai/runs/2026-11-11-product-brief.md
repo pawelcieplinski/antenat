@@ -26,3 +26,8 @@ Next: the founder checks MyHeritage's ancestor views (A04) and interviews other 
 Scope: record the founder's answers to Q01–Q04: D07 (web application), D08 (AI assistant free for the founder), R01 (data stored with consent and in line with GDPR and Polish and EU law), D09 (outcome check: the founder imports their export and browses all 32 direct ancestors), D10 (how R01 applies to living relatives who do not use Antenat, now Q07, blocks release, not planning). Q01, Q03 closed; Q04 closed in part; Q02 narrowed.
 Decisions/gotchas: R01's wording was the agent's reading and was put back to the founder before being recorded as confirmed. A skeptic pass stopped the brief from claiming implementation readiness for the whole first version: the import and the direct-ancestors view are ready for planning on the founder's supported need, while the other-user part of D05 still waits on A01, because accepting a risk is not evidence.
 Next: the founder checks MyHeritage's ancestor views (A04), then interviews other family researchers (A01); implementation planning of the import and the direct-ancestors view can follow.
+
+## 2026-11-12
+Scope: record the founder's MyHeritage check (A04 held: its limited mode still shows relatives down to cousins) in `research/interviews/2026-11-12-founder-myheritage-check.md`; the direct-ancestors view now also hides ancestors' other spouses (confirmed reading); A04 entry removed from the collection plan.
+Decisions/gotchas: the check has no link or screenshot, so it is tagged as the founder's account (`[INTERVIEW]`), not `[BENCHMARK]`. Reviewed inline only, given the size of the change.
+Next: implementation planning of the import and the direct-ancestors view; the founder interviews other family researchers (A01).

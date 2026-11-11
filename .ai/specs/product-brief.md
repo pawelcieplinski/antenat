@@ -2,11 +2,11 @@
 
 - Date: 2026-11-12 (first written 2026-11-11)
 - Mode: own; Owner: Paweł Ciepliński (founder, product owner); Pass: full
-- Evidence basis: one first-person account from the founder (written chat answers, 2026-11-11), a check of the founder's own GEDCOM export (2026-11-11) and the founder's confirmed decisions; no checked benchmarks or accounts from other people. Most consequential untested beliefs: A01, A04.
-- Coverage: 33 claims — 28 sourced (interview 8, data 4, document 16, product 0, benchmark 0), 0 synthetic, 5 assumed; 2 entries on the collection plan
+- Evidence basis: the founder's first-person accounts (written chat answers, 2026-11-11 and 2026-11-12, including their own check of MyHeritage's views), a check of the founder's own GEDCOM export (2026-11-11) and the founder's confirmed decisions; no checked benchmarks or accounts from other people. Most consequential untested belief: A01.
+- Coverage: 34 claims — 29 sourced (interview 9, data 4, document 16, product 0, benchmark 0), 0 synthetic, 5 assumed; 1 entry on the collection plan
 - Synthetic hypotheses outside Coverage: 0
-- Definition of Ready signed by: Paweł Ciepliński on 2026-11-12 for the GEDCOM import and the direct-ancestors view (D06, D09); not signed for the other-user part of the first version (D05), which waits on A01, see the [addendum](#definition-of-ready-addendum-own); ready for: research (A01, A04) and implementation planning of the import and the direct-ancestors view
-- Sources: `.ai/specs/research/interviews/2026-11-11-founder.md`, `.ai/specs/research/decisions/D01-audience.md`, `.ai/specs/research/decisions/D02-gedcom-import.md`, `.ai/specs/research/decisions/D03-family-statistics.md`, `.ai/specs/research/decisions/D04-first-version-scope.md`, `.ai/specs/research/decisions/D05-other-users-from-start.md`, `.ai/specs/research/decisions/N01-N02-non-goals.md`, `.ai/specs/research/decisions/D06-journey-view-later.md`, `.ai/specs/research/data/2026-11-11-gedcom-export-check.md`, `.ai/specs/research/decisions/D07-web-app.md`, `.ai/specs/research/decisions/D08-ai-no-cost-for-founder.md`, `.ai/specs/research/decisions/R01-consent-and-data-protection.md`, `.ai/specs/research/decisions/D09-first-version-outcome-check.md`, `.ai/specs/research/decisions/D10-living-relatives-blocks-release.md`
+- Definition of Ready signed by: Paweł Ciepliński on 2026-11-12 for the GEDCOM import and the direct-ancestors view (D06, D09); not signed for the other-user part of the first version (D05), which waits on A01, see the [addendum](#definition-of-ready-addendum-own); ready for: research (A01) and implementation planning of the import and the direct-ancestors view
+- Sources: `.ai/specs/research/interviews/2026-11-11-founder.md`, `.ai/specs/research/decisions/D01-audience.md`, `.ai/specs/research/decisions/D02-gedcom-import.md`, `.ai/specs/research/decisions/D03-family-statistics.md`, `.ai/specs/research/decisions/D04-first-version-scope.md`, `.ai/specs/research/decisions/D05-other-users-from-start.md`, `.ai/specs/research/decisions/N01-N02-non-goals.md`, `.ai/specs/research/decisions/D06-journey-view-later.md`, `.ai/specs/research/data/2026-11-11-gedcom-export-check.md`, `.ai/specs/research/decisions/D07-web-app.md`, `.ai/specs/research/decisions/D08-ai-no-cost-for-founder.md`, `.ai/specs/research/decisions/R01-consent-and-data-protection.md`, `.ai/specs/research/decisions/D09-first-version-outcome-check.md`, `.ai/specs/research/decisions/D10-living-relatives-blocks-release.md`, `.ai/specs/research/interviews/2026-11-12-founder-myheritage-check.md`
 
 ## Decision summary
 
@@ -16,9 +16,9 @@ The founder researches their own family history, keeps the tree in MyHeritage, a
 
 First version, for the founder and other people researching their families: user accounts, import of a GEDCOM file (D02) and a view of direct ancestors only. The founder's own export supports that view: all 32 recorded direct ancestors are reachable through parent links. The journey view moved later (D06): 11 of 32 ancestors have places, and the places are bare names without coordinates, so it needs a step to confirm each locality. Statistics (D03), documents and photos, the heatmap and the AI assistant also come later. See [Scope](#scope) and [Key flows](#key-flows).
 
-What could change this: other people's needs are untested (A01), and nobody has checked whether MyHeritage already has an ancestors-only view (A04). Serving other users from the start brings a data-protection rule (R01); how it applies to living relatives who appear in an uploaded tree but do not use Antenat is open (Q07) and blocks release to other users. Antenat is a web application (D07).
+What could change this: other people's needs are untested (A01). The founder checked MyHeritage: its limited view still shows relatives down to cousins, so the direct-ancestors view remains a gap for the founder (A04 held). Serving other users from the start brings a data-protection rule (R01); how it applies to living relatives who appear in an uploaded tree but do not use Antenat is open (Q07) and blocks release to other users. Antenat is a web application (D07).
 
-Next action: the founder checks MyHeritage's ancestor views (A04) first, since a positive result would remove the first version's main reason, then interviews other family researchers (A01); see the [Collection plan](#collection-plan). Implementation planning of the import and the direct-ancestors view can follow. Dates open.
+Next action: implementation planning of the import and the direct-ancestors view can start; in parallel, the founder interviews other family researchers (A01), see the [Collection plan](#collection-plan). Dates open.
 
 ## Vision
 
@@ -35,6 +35,7 @@ A tool for following a family's history through its tree, documents and photos, 
 ## Problems, with evidence
 
 - The founder wants to limit the tree to direct ancestors without the ancestors' siblings and finds browsing it otherwise inconvenient in MyHeritage. Only this one account supports it; frequency and cost were not described. `[INTERVIEW]` interviews/2026-11-11-founder.md
+- The founder checked MyHeritage's views: a limited mode still shows relatives down to cousins; the founder also wants to hide siblings and other spouses. `[INTERVIEW]` interviews/2026-11-12-founder-myheritage-check.md
 - The founder wants to know where the family comes from and how it ended up where it lives now. This was given as the question the proposed map, heatmap, timeline or AI should answer; no attempt to answer it, difficulty or current method was described. `[INTERVIEW]` interviews/2026-11-11-founder.md
 - The founder searches records across several archive sites (szukajwarchiwach.gov.pl, genealogiawarchiwach.pl, FamilySearch, Geneteka); no difficulty with that search was described. `[INTERVIEW]` interviews/2026-11-11-founder.md
 - That other family researchers have the same two problems is a hypothesis (A01).
@@ -47,7 +48,7 @@ A tool for following a family's history through its tree, documents and photos, 
 | reference | what it does well | where it falls short for our users | checked on | link |
 |---|---|---|---|---|
 
-No reference product was checked; MyHeritage is described only from the founder's account (A04).
+No reference product was checked with a recorded link; MyHeritage is described from the founder's account, including their own check of its views (A04).
 
 ## Goals and success criteria
 
@@ -68,7 +69,7 @@ No reference product was checked; MyHeritage is described only from the founder'
 | Term | Meaning | Owned by | Visible to |
 |---|---|---|---|
 | GEDCOM | The standard file format genealogy programs use to exchange family trees; Antenat's import format (D02). | founder | users |
-| Direct ancestors | A person's parents, grandparents and earlier generations in the direct line, excluding the ancestors' siblings. | founder | users |
+| Direct ancestors | A person's parents, grandparents and earlier generations in the direct line, excluding the ancestors' siblings and other spouses (spouses who are not themselves direct ancestors, such as a great-grandmother's second husband; confirmed by the founder 2026-11-12). | founder | users |
 | Journey view | The places where direct ancestors lived, shown on a map and in time order; later version (D06). | founder | users |
 
 ## Key flows
@@ -117,7 +118,7 @@ R01's wording was proposed by the agent and confirmed by the founder; how it app
 | A01 | Other people researching their families also want a direct-ancestors view and an answer to where their family came from `[ASSUMPTION]` founder's belief behind D01 and D05 | high | Only the founder's own account | The first version is built for users who may not need it; D01, D05 and D06 are revisited (Q05) | Talk to people who research their own family history about the last time they worked on their tree; note what they wanted to see, how they managed, where they keep their tree and whether they can export it as GEDCOM. Shows whether the founder's needs recur; does not show willingness to switch tools | Paweł Ciepliński | unknown | accepted untested (D05) |
 | A02 | The founder's MyHeritage GEDCOM export contains, for direct ancestors, the parent links, places and dates needed for the direct-ancestors and journey views, and those places can be placed on a map `[ASSUMPTION]` no material | high | Checked 2026-11-11 on the founder's export: parent links hold; places and dates are sparse, and places are bare names without coordinates (see [Key flows](#key-flows)) | The journey view needs manual place and date entry or leaves the first version; D02 and D04 are revisited | Export the tree from MyHeritage as GEDCOM; for direct ancestors, check which have parent links, places and dates, and try placing a sample of the places on a map | Paweł Ciepliński | 2026-11-11 | refuted: the places part fails; led to D06 |
 | A03 | A free AI service can read the founder's scanned records well enough to be useful `[ASSUMPTION]` founder's intention ("where possible") | medium | None | The AI assistant changes form or is dropped; only affects Later | Run a few of the founder's scanned records through free AI tools and compare with the founder's own reading | Paweł Ciepliński | before the AI assistant is planned | untested |
-| A04 | MyHeritage does not already offer a view of direct ancestors without siblings that meets the founder's need `[ASSUMPTION]` founder's account, unchecked | high | The founder says MyHeritage lacks tree filtering; no check of its views was made | The direct-ancestors view is not a gap for the founder; D06 is revisited | Check MyHeritage's tree and chart views on the founder's tree for an ancestors-only option; note what is missing for the founder's purpose | Paweł Ciepliński | unknown | untested |
+| A04 | MyHeritage does not already offer a view of direct ancestors without siblings that meets the founder's need `[ASSUMPTION]` founder's account, unchecked | high | The founder checked on 2026-11-12: MyHeritage's limited mode still shows relatives down to cousins; the founder also wants siblings and other spouses hidden (interviews/2026-11-12-founder-myheritage-check.md) | The direct-ancestors view is not a gap for the founder; D06 is revisited | Check MyHeritage's tree and chart views on the founder's tree for an ancestors-only option; note what is missing for the founder's purpose | Paweł Ciepliński | 2026-11-12 | held |
 | A05 | A bare place name in a user's tree can be matched to one locality with little effort from the user `[ASSUMPTION]` no material; the agent expects some names to match several localities, unchecked | medium | The founder's places are bare names without coordinates; no lookup was run | The confirmation step needs more work or a different design; affects only the later journey view (D06) | The founder pins the 13 places from their export on a map and notes which names were ambiguous; or a gazetteer lookup, which sends the names to an external service and needs the founder's consent | Paweł Ciepliński | before the journey view is planned | untested |
 
 ## Kill criteria
@@ -144,7 +145,7 @@ None. No simulated walkthroughs were run.
 
 ## Definition of Ready addendum (own)
 
-Problems and Target group are supported for the founder only, by one first-person account; other users are a decision (D01, D05) without research behind it (A01), and accepting that risk does not make it evidence. The scope is confirmed (D05, D06), the platform is web (D07), data protection follows R01 and the outcome check is agreed (D09). The import and the direct-ancestors view address the founder's supported problem, and the export check confirmed the parent links they need, so they are ready for implementation planning; A04 should be checked first. The other-user part of the first version (D05) has no supported problem yet and waits on A01. Release to other users also waits on Q07 (D10).
+Problems and Target group are supported for the founder only, by the founder's own accounts; other users are a decision (D01, D05) without research behind it (A01), and accepting that risk does not make it evidence. The scope is confirmed (D05, D06), the platform is web (D07), data protection follows R01 and the outcome check is agreed (D09). The import and the direct-ancestors view address the founder's supported problem, and the export check confirmed the parent links they need, so they are ready for implementation planning; the founder's MyHeritage check found no view that meets the need (A04 held). The other-user part of the first version (D05) has no supported problem yet and waits on A01. Release to other users also waits on Q07 (D10).
 
 ## Collection plan
 
@@ -155,11 +156,3 @@ Problems and Target group are supported for the founder only, by one first-perso
 - How: interviews about the last time they worked on their tree
 - Owner and by when: Paweł Ciepliński; date unknown
 - Template: `.ai/specs/research/templates/interview-note.md`
-
-### Does MyHeritage already offer a direct-ancestors view?
-
-- What decision or work needs it: whether the direct-ancestors view belongs in the first version (A04, D06)
-- Who can answer it: the founder, on their own MyHeritage tree
-- How: check MyHeritage's tree and chart views for an ancestors-only option and record what is missing for the founder's purpose
-- Owner and by when: Paweł Ciepliński; date unknown
-- Template: `.ai/specs/research/templates/benchmark-check.md`
