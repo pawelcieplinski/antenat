@@ -10,4 +10,4 @@
   - D15: the import supports GEDCOM 5.5.1 and the newest version, GEDCOM 7. Option: 5.5.1 only.
   - D16: integration with Google Drive and similar services is its own spec: syncing GEDCOM files through the cloud. Using cloud drives as free storage for photos and documents is the founder's intention, whose feasibility that spec checks.
 - Consequences, and what would make us revisit them: D11 makes the import depend on the accounts spec. D12 makes stored files differ from uploads. D16's photo and document storage is a later-scope proposal until its feasibility is checked.
-- Status: active (D11–D16)
+- Status: D11, D13, D14, D16 active; D12 superseded by D17 and D15 superseded by D18 (2026-11-14, see D17-D19-revised-import-choices.md)
